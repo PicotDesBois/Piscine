@@ -21,13 +21,13 @@ void ChargementAvions(std::vector<Avion*>m_listeAvions)
         throw std::runtime_error( "Impossible d'ouvrir en lecture " + nomFichier );
     /*******************************************************************************/
 
-    /***************************** Lecture de le nombre d'avions ********************/
+    /***************************** Lecture du nombre d'avions ********************/
     ifs >> nombre;
     if ( ifs.fail() )
         throw std::runtime_error("Probleme lecture nombre");
     /*******************************************************************************/
 
-    /******************** Ajout des sucesseurs et de la distance avec le sommet *******************/
+    /******************** Création des avions *******************/
     int reservoir,consommation,identifiant;
     std::string type;
     for (int i=0;i<nombre;++i){
@@ -37,8 +37,6 @@ void ChargementAvions(std::vector<Avion*>m_listeAvions)
         m_listeAvions.push_back(new Avion{type,identifiant,reservoir});
     }
     /*******************************************************************************/
-    for(auto elem:m_listeAvions)
-        elem->afficher();
 }
 
 
